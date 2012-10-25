@@ -4,7 +4,11 @@ require './parser.rb'
 require './light.rb'
 
 def start id, go_url, pname
-   update id, go_url, pname
+  scheduler = Rufus::Scheduler.start_new
+  scheduler.every '3s' do
+    update id, go_url, pname
+  end
+  scheduler.join
 end
 
 private

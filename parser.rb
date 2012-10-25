@@ -45,7 +45,6 @@ def stage_status stage_feed
 end
 
 def combined_status statuses
-  puts statuses
   return "building!" if statuses.include?("Unknown")
   return "failure!" if statuses.include?("Failed")
   "success!"
