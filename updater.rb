@@ -25,8 +25,8 @@ end
 
 
 def light_status pipeline_last_status, pipeline_activity
-  return "building|" if pipeline_activity=="Building"
-  return "failure!" if pipeline_last_status=="Failed"
+  return "building!" if pipeline_activity=="Building"
+  return "failure!" if pipeline_last_status=="Failure"
   "success!"
 end
 

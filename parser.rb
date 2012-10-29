@@ -1,5 +1,6 @@
 require 'nokogiri'
 require 'curb'
+require 'open-uri'
 require './pipeline.rb'
 
 
@@ -28,11 +29,12 @@ def pipeline_jobs_activity go_url, pname
 end
 
 def xml url
-  Nokogiri.parse Curl.get(url).body_str 
+  # Nokogiri.parse Curl.get(url).body_str 
+  Nokogiri::XML(open(url))
 end
 
 def combined_status statuses
-  return "Failed" if statuses.include?("Failed")
+  return "Failure" if statuses.include?("Failure")
   "Success"
 end
 
