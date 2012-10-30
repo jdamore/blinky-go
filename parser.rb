@@ -1,5 +1,4 @@
 require 'nokogiri'
-require 'curb'
 require 'open-uri'
 require './pipeline.rb'
 
@@ -28,8 +27,7 @@ def pipeline_jobs_activity go_url, pname
       .map { |project| project.attribute("activity").value() }
 end
 
-def xml url
-  # Nokogiri.parse Curl.get(url).body_str 
+def xml url 
   Nokogiri::XML(open(url))
 end
 

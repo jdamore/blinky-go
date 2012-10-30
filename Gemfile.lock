@@ -4,18 +4,16 @@ GEM
   specs:
     blinky (0.0.3)
       ruby-usb (>= 0.2.1)
-    curb (0.8.1)
     nokogiri (1.5.5)
     ruby-usb (0.2.1)
     rufus-scheduler (2.0.17)
       tzinfo (>= 0.3.23)
-    tzinfo (0.3.33)
+    tzinfo (0.3.34)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   blinky
-  curb
   nokogiri
   rufus-scheduler
